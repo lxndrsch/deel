@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: stg_invoices
+    description: "Invoice transactions data"
+    columns:
+      - name: invoice_id
+        description: "Unique identifier for an invoice"
+        tests:
+          - unique
+          - not_null
+
+      - name: parent_invoice_id
+        description: "Parent invoice reference"
+
+      - name: transaction_id
+        description: "Transaction reference ID"
+        tests:
+          - not_null
+
+      - name: organization_id
+        description: "Organization reference ID"
+        tests:
+          - not_null
+
+      - name: type
+        description: "Type of invoice (e.g., credit, debit)"
+
+      - name: status
+        description: "Invoice status (e.g., paid, pending, canceled)"
+
+      - name: currency
+        description: "Currency used in the invoice"
+        tests:
+          - not_null
+
+      - name: amount
+        description: "Invoice amount"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Timestamp of invoice creation"
+        tests:
+          - not_null

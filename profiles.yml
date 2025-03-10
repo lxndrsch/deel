@@ -1,0 +1,7 @@
+deel:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: my_database.db  
+      threads: 1

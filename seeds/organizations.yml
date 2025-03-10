@@ -1,0 +1,8 @@
+version: 2
+
+seeds:
+  - name: organizations
+    config:
+      column_types:
+        ORGANIZATION_ID: BIGINT
+        LEGAL_ENTITY_COUNTRY_CODE: BIGINT

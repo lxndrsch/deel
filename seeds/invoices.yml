@@ -1,0 +1,11 @@
+version: 2
+
+seeds:
+  - name: invoices
+    config:
+      column_types:
+        INVOICE_ID: BIGINT
+        PARENT_INVOICE_ID: BIGINT
+        TRANSACTION_ID: BIGINT
+        ORGANIZATION_ID: BIGINT
+        TYPE: BIGINT

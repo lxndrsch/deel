@@ -1,0 +1,36 @@
+version: 2
+
+models: 
+  - name: stg_organizations
+    description: "Organizations data"
+    columns:
+      - name: organization_id
+        description: "Unique identifier for an organization"
+        tests:
+          - unique
+          - not_null
+
+      - name: first_payment_date
+        description: "Date of first payment"
+        tests:
+          - not_null
+
+      - name: last_payment_date
+        description: "Date of last payment"
+        tests:
+          - not_null
+
+      - name: legal_entity_country_code
+        description: "Country code of the legal entity"
+        tests:
+          - not_null
+
+      - name: count_total_contracts_active
+        description: "Total number of active contracts"
+        tests:
+          - not_null
+
+      - name: created_date
+        description: "Date the organization record was created"
+        tests:
+          - not_null
