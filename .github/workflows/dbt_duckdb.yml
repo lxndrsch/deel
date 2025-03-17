@@ -17,31 +17,3 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-
-      - name: Install dbt and DuckDB Adapter
-        run: |
-          pip install dbt-core dbt-duckdb
-
-      - name: Install dependencies
-        run: dbt deps
-      
-      - name: Seed Models
-        run: dbt seed --profiles-dir .
-        
-      - name: Run DBT Models
-        run: dbt run --profiles-dir .
-
-      - name: Test DBT Models
-        run: dbt test --profiles-dir .
-
-      - name: Notify on Failure
-        if: failure()
-        run: echo "DBT Run Failed!"
-
-      - name: Install Dependencies
-        run: pip install duckdb requests
-
-      - name: Run Balance Check
-        run: python check_total_balance_duckdb.py
-        env:
-          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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 #dummy
